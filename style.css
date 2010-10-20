@@ -1,0 +1,31 @@
+* { margin: 0; padding: 0; }
+html, body { height: 100%; }
+html { background: #F8E088 url(http://wufoo.com/images/stripe2.png); }
+body { font-family: 'Lucida Grande', 'Lucida Sans Unicode', Tahoma, sans-serif; }
+
+#demo-info { text-align: right; color: white; vertical-align: middle; font: 13px "Lucida Grande", Arial, Sans-Serif; }
+#demo-info a { color: white; text-decoration: none; border-bottom: 1px dotted white; padding-bottom: 1px; }
+#demo-info a:hover { border-bottom-style: solid; }
+
+h1, h2, h3 { font-weight: normal; margin: 0 0 15px 0; }
+
+#page-wrap { 
+	margin: 40px auto; 
+	width: 700px; 
+	padding: 50px; 
+	background: white; 
+	-webkit-box-shadow: 0 0 16px #666; -moz-box-shadow: 0 0 16px #666; 
+}
+
+#wufoo-form {
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
+}
+
+#lb-nav { margin: 0 0 15px 0; }
+#lb-nav a { padding: 2px 6px; }
+#lb-nav strong { margin-right: 10px; }
+#roll-your-own-version .lb-nav-roll,
+#mediabox-version .lb-nav-moo,
+#colorbox-version .lb-nav-jq { color: white; text-decoration: none; background: #222; -moz-border-radius: 4px; -webkit-border-radius: 4px; color: white; pointer-events: none; cursor: default; },
