@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<head>
+	<meta charset='UTF-8' />
+
+	<title>Wufoo in a Lightbox | Colorbox</title>
+
+	<link rel='stylesheet' href='colorbox/colorbox.css' media='screen'>
+	<link rel='stylesheet' href='style.css' />
+
+	<script src="js/jquery-1.4.min.js"></script>
+	<script src="colorbox/jquery.colorbox-min.js"></script>
+	<script >
+		__savedHeight = 0;
+
+		function resizeTheColorbox(height) {
+			if (height > 0) {
+				__savedHeight = new Number(height);
+				var newHeight = __savedHeight + 50; // addition is the submit button offset
+
+				$(".open-lightbox").colorbox.resize({
+					height : newHeight
+				});
+			}
+		}
+
+		$(function() {
+			$(".open-lightbox").colorbox({
+				"inline" : true,
+				"href": "#wufoo-form iframe",
+				"width": 500,
+				"innerHeight": $("#wufoo-form iframe").height()   // Only deals with initial load
+			});
+		});
+
+		$(document).bind('cbox_complete', function(){
+			resizeTheColorbox(__savedHeight);
+		});
+	</script>
+</head>
+
+<body>
+
+	<div id="examples-header" style="width: 100%; background: #bb3b1f;">
+
+	  <table border="0" cellspacing="0" style="width: 800px; margin: 0 auto;">
+	  	<tr>
+
+	  		<th style="text-align: left;"><img src="http://wufoo.com/images/examples/examples-logo.png" alt="Wufoo Examples" /></th> 
+
+	  		<td id="demo-info">Demo for <a href='http://wufoo.com/index.php?p=3260'>Wufoo in a Lightbox</a></td> 
+
+	  	</tr>
+	  </table>
+
+	</div>
+
+	<div id="page-wrap">
+
+		<h1>Wufoo in a lightbox</h1>
+		<h2>Using <a href='http://jquery.com'>jQuery</a> and <a href="http://colorpowered.com/colorbox/">Colorbox</a></h2>
+
+		<p><a href="#wufoo-form" class="button open-lightbox">Click Here to Open Lightbox</a></p>
+
+		<div id="wufoo-form">
+
+			<script type="text/javascript">var host = (("https:" == document.location.protocol) ? "https://secure." : "http://");document.write(unescape("%3Cscript src='" + host + "wufoo.com/scripts/embed/form.js' type='text/javascript'%3E%3C/script%3E"));</script>
+
+			<script type="text/javascript">
+				var s7p8a3 = new WufooForm();
+				s7p8a3.initialize({
+					'userName':'examples', 
+					'formHash':'s7p8a3', 
+					'autoResize':true,
+					'resizeDone': resizeTheColorbox,
+					'height':'395', 
+					'ssl':true
+				});
+				s7p8a3.display();
+
+			</script>
+
+		</div>
+
+	</div>
+
+</body>
+
+</html>
